@@ -4,6 +4,7 @@ const number = document.querySelector(".js_guess_number");
 const randomNumber= getRandomNumber(100);
 const tryIt= document.querySelector(".try");
 const clue= document.querySelector(".clue");
+const counter= document.querySelector(".counter");
 
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
@@ -23,8 +24,13 @@ function compareNumbers(){
     clue.innerHTML='Demasiado bajo';
   }
 }
+function counterFunction(){
+    counter.innerHTML= `${parseInt(counter.innerHTML) +1}`;
+
+}
 function handleButton(){
-    compareNumbers();
+    compareNumbers()
+    counterFunction()
 }
 
 tryIt.addEventListener('click', handleButton);
